@@ -68,7 +68,11 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		return this;
 	},
 
-	drop: function(event, index, newlist){
-		// newList.trigger('update-sort', [this.model, index]);
+	drop: function(event, index){
+		event.stopPropagation();
+		$card = $(event.currentTarget)
+		$list = $card.parent().parent();
+		$list.trigger('update-sort', [this.model, index]);
 	}
+
 });

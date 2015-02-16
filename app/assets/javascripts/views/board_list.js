@@ -90,17 +90,33 @@ TrelloClone.Views.List = Backbone.CompositeView.extend({
 		var content = this.template({ list: this.model });
 		this.$el.html(content);
 		this.$el.addClass('list');
-		this.attachSubviews();
-		
+		this.attachSubviews();		
 		return this;
 	},
 
 	drop: function(event, index){
+		event.stopPropagation();
 		$('.board').trigger('update-sort', [this.model, index]);
 	},
 
-	updateSort: function(event, model, future){
-		debugger
+	updateSort: function(event, model, future) {
+		event.stopPropagation();
+
+		var cardCollection = this.model.cards().models;
+		var cardViews = this.subviews()['.cards'];
+		var current = cardCollection.indexOf(model);
+
+		var swapView = cardViews.splice(current, 1)[0];
+		cardViews.splice(future, 0, swapView);
+
+		var swapCard = cardCollection.splice(current, 1)[0];
+		cardCollection.splice(future, 0, swapCard);
+
+		_.each(cardCollection, function(model, index){
+			model.set('ord', index);
+			model.save({});
+		});
+
 	}
 
 });
