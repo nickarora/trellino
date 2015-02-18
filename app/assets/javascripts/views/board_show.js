@@ -1,6 +1,8 @@
 TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
 	template: JST['board_show'],
 
+	className: 'board',
+
 	events: {
 		"submit form.new-list-form": "createNewList",
 		"click .new-list-link": "showListForm",
@@ -71,30 +73,34 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
 	},
 
 	render: function(){
-
-		var that = this;
-		$('body').css('background-color', '#1875ad');
-
 		var content = this.template({ board: this.model });
+		this.updateBgColor();
 		this.$el.html(content);
-		this.$el.addClass('board');
 		this.attachSubviews();
+		this.makeListsSortable();
+		this.makeCardsSortable();
+		return this;
+	},
 
+	updateBgColor: function(){
+		$('body').css('background-color', '#1875ad');
+	},
+
+	makeListsSortable: function(){
 		this.$('div.lists').sortable({
 			stop: function(event, ui){
 				ui.item.trigger('drop', ui.item.index());
 			}
 		});
+	},
 
+	makeCardsSortable: function(){
 		this.$('div.cards').sortable({
 			connectWith: $('.cards'),
 			stop: function(event, ui){
 				ui.item.trigger('drop', ui.item.index());
-				that.render();
 			}
 		});
-
-		return this;
 	},
 
 	updateSort: function(event, model, future){
@@ -115,18 +121,10 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
 			model.set('ord', index);
 			model.save({}, {
 				success: function(){
-					that.render();
+					that.makeCardsSortable();
 				}
 			});
 		});
-
-		this.$('div.cards').sortable({
-			connectWith: $('.cards'),
-			stop: function(event, ui){
-				ui.item.trigger('drop', ui.item.index());
-			}
-		});
-
 	}
 
 });

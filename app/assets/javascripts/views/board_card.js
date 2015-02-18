@@ -6,7 +6,9 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		'click .delete': 'deleteCard',
 		"click .glyphicon": 'showModal',
 		"click .block-page": 'hideModal',
-		"drop": 'drop'
+		"drop": "drop",
+		"move": "moveCard"
+
 	},
 
 	initialize: function() {
@@ -68,11 +70,37 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		return this;
 	},
 
+	moveCard: function(event, futureList){
+		event.stopPropagation();
+
+		var newCard = new TrelloClone.Models.Card({
+      title: this.model.get('title'),
+      list_id: futureList.id,
+      ord: futureList.cards().length,
+      description: this.model.get('description')
+    });
+
+		this.model.destroy();
+    this.model = newCard;
+	},
+
 	drop: function(event, index){
 		event.stopPropagation();
-		$card = $(event.currentTarget)
-		$list = $card.parent().parent();
-		$list.trigger('update-sort', [this.model, index]);
+		var that = this;
+
+		if (this.model.id) {
+			$card = $(event.currentTarget)
+			$list = $card.parent().parent();
+			$list.trigger('update-sort', [that.model, index]);	
+		} else {
+			this.model.save({},{
+				success: function(){
+					$card = $(event.currentTarget)
+					$list = $card.parent().parent();
+					$list.trigger('update-sort', [that.model, index]);		
+				}
+			});	
+		}
 	}
 
 });

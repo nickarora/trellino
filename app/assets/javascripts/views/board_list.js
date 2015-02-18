@@ -2,12 +2,15 @@ TrelloClone.Views.List = Backbone.CompositeView.extend({
 	
 	template: JST['list'],
 
+	className: 'list',
+
 	events: {
 		"submit form.new-card-form": "createNewCard",
 		"click .new-card-link": "showCardForm",
 		"click .new-card .cancel": "hideCardForm",
 		"blur .new-card textarea": "hideCardForm",
-		"drop": 'drop',
+		"drop": "drop",
+		"sortreceive": "receiveCard",
 		'update-sort': 'updateSort'
 	},
 
@@ -83,14 +86,14 @@ TrelloClone.Views.List = Backbone.CompositeView.extend({
     var cardSubviews = this.subviews()['.cards'];
     var subviewToRemove = _.filter(cardSubviews, function(view) { return view.model.id == cardToRemove; } )[0];
     cardSubviews.splice(cardSubviews.indexOf(subviewToRemove), 1);
-    this.render();
+    this.render();    
 	},
 
 	render: function(){
 		var content = this.template({ list: this.model });
 		this.$el.html(content);
-		this.$el.addClass('list');
-		this.attachSubviews();		
+		this.attachSubviews();
+		this.makeCardsSortable();
 		return this;
 	},
 
@@ -99,22 +102,54 @@ TrelloClone.Views.List = Backbone.CompositeView.extend({
 		$('.board').trigger('update-sort', [this.model, index]);
 	},
 
+	receiveCard: function(event, ui){
+		event.stopPropagation();
+		ui.item.trigger('move', this.model);
+	},
+
+	makeCardsSortable: function(){
+		$('div.cards').sortable({
+			connectWith: $('.cards'),
+			stop: function(event, ui){
+				ui.item.trigger('drop', ui.item.index());
+			}
+		});
+	},
+
 	updateSort: function(event, model, future) {
 		event.stopPropagation();
+		var that = this;
 
 		var cardCollection = this.model.cards().models;
-		var cardViews = this.subviews()['.cards'];
 		var current = cardCollection.indexOf(model);
+		var cardViews = this.subviews()['.cards'];
 
-		var swapView = cardViews.splice(current, 1)[0];
-		cardViews.splice(future, 0, swapView);
+		if (current >= 0){
+			var cardSubview = cardViews.splice(current, 1)[0];
+			cardViews.splice(future, 0, cardSubview);
+		} else {
+			this.model.cards().add(model, { silent: true });
+			current = cardCollection.indexOf(model);
+			var cardSubview = new TrelloClone.Views.Card({ model: model });
+
+			if (cardViews) {
+				cardViews.splice(future, 0, cardSubview);
+				cardSubview.render();	
+			} else {
+				this.addSubview('.cards', cardSubview);
+			}	
+		} 
 
 		var swapCard = cardCollection.splice(current, 1)[0];
 		cardCollection.splice(future, 0, swapCard);
 
 		_.each(cardCollection, function(model, index){
 			model.set('ord', index);
-			model.save({});
+			model.save({}, {
+				success: function(){
+					that.render();
+				}
+			});
 		});
 
 	}
