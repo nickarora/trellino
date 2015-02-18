@@ -142,6 +142,7 @@ TrelloClone.Views.List = Backbone.CompositeView.extend({
 
 		var swapCard = cardCollection.splice(current, 1)[0];
 		cardCollection.splice(future, 0, swapCard);
+		this.model.cards().models = cardCollection
 
 		_.each(cardCollection, function(model, index){
 			model.set('ord', index);

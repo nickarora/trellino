@@ -212,7 +212,7 @@ h4 {
 /* Modal View */
 .block-page {
 	background-color: black;
-	opacity: .8;
+	opacity: .6;
 	position: fixed;
 	top: 0;
 	bottom: 0;
@@ -222,10 +222,18 @@ h4 {
 }
 
 .edit-delete-form {
-	position: absolute;
-	background-color:rgba(255,0,0,0);
-	text-decoration: none;
+	position: fixed;
+	
+	left: 50%;
+	top: 30%;
 	width: 230px;
+	height: 130px;
+	margin-left: -115px;
+	margin-top: -65px;
+	
+	background-color: #ccc;
+	text-decoration: none;
+	
 	border-radius: 6px;
 	padding: 6px 6px 6px 6px;
 	color: #8c8c8c;
@@ -239,7 +247,6 @@ h4 {
 .edit-delete-form .form-group-small button {
 	box-shadow: none;
 }
-
 
 .edit-delete-form .form-group-small button {
 	margin: 0 -12px 0 0 !important;

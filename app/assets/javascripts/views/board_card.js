@@ -5,7 +5,7 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		'submit form': 'updateCard',
 		'click .delete': 'deleteCard',
 		"click .glyphicon": 'showModal',
-		"click .block-page": 'hideModal',
+		'hideModal': 'hideModal',
 		"drop": "drop",
 		"move": "moveCard"
 
@@ -28,7 +28,6 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 				var selector = '.glyphicon';
 				var subview = that.subviews()['.glyphicon'][0];
 				that.removeSubview(selector, subview);
-				that.$('.glyphicon').removeClass('disabled');
 			}
 		});
 	},
@@ -38,27 +37,14 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 	},
 
 	showModal: function(event){
-
-		if ( this.$('.edit-delete-form').length > 0 ) {
-			return;
-		}
-
-		var modalForm = new TrelloClone.Views.EditDeleteForm();
-		this.addSubview('.glyphicon', modalForm);
-		this.render();
+		var modalForm = new TrelloClone.Views.EditDeleteForm({
+			sourceCard: this
+		});
+		$('body').prepend(modalForm.render().$el)
 	},
 
 	hideModal: function(event){
-		event.stopPropagation();
-		if (event.relatedTarget && event.relatedTarget.type === "submit"){
-			return;
-		}
-
-		var selector = '.glyphicon';
-		var subview = this.subviews()['.glyphicon'][0];
-		this.removeSubview(selector, subview);
-
-		this.$('.glyphicon').removeClass('disabled');
+		$('.edit-delete-modal').remove();
 	},
 
 	render: function(){
