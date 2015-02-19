@@ -2,8 +2,6 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 	template: JST['card'],
 
 	events: {
-		'submit form': 'updateCard',
-		'click .delete': 'deleteCard',
 		"click .glyphicon": 'showModal',
 		'hideModal': 'hideModal',
 		"drop": "drop",
@@ -15,30 +13,27 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		this.listenTo(this.model, 'change', this.render.bind(this));
 	},
 
-	updateCard: function(){
+	updateCard: function(event){
 		event.preventDefault();
-		
-		var that = this;
-
-		var params = $(event.target).serializeJSON();
+		this.hideModal();
+		var params = $(event.target.parentElement.parentElement).serializeJSON();
 		var updatedCard = this.model.set(params["edit"]);
 
 		updatedCard.save({}, {
 			success: function(){
-				var selector = '.glyphicon';
-				var subview = that.subviews()['.glyphicon'][0];
-				that.removeSubview(selector, subview);
 			}
 		});
 	},
 
 	deleteCard: function() {
+		this.hideModal();
 		this.model.destroy();
 	},
 
 	showModal: function(event){
 		var modalForm = new TrelloClone.Views.EditDeleteForm({
-			sourceCard: this
+			sourceCard: this,
+			model: this.model
 		});
 		$('body').prepend(modalForm.render().$el)
 	},

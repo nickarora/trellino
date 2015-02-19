@@ -9,15 +9,28 @@ TrelloClone.Views.EditDeleteForm = Backbone.CompositeView.extend({
 	},
 
 	events: {
-		
+		'click .submit': 'submitHandler',
+		'click .delete': 'deleteHandler'
 	},
 
 	hideModal: function(event){
 		this.card.$el.trigger('hideModal');
 	},
+
+	submitHandler: function(event){
+		event.preventDefault();
+		this.card.updateCard(event);
+	},
+
+	deleteHandler: function(event){
+		event.preventDefault();
+		this.card.deleteCard();
+	},
 	
 	render: function(){
-		var content = this.template();
+		var content = this.template({
+			card: this.model
+		});
 		this.$el.html(content);
 		return this;
 	}
