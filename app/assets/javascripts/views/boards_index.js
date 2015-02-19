@@ -62,6 +62,7 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
 	},
 
 	render: function(){
+		$('body').css('background-image', 'none');
 		$('body').css('background-color', '#fff');
 		var content = this.template();
 		this.$el.html(content);

@@ -83,6 +83,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
 	},
 
 	updateBgColor: function(){
+		$('body').css('background-image', 'none');
 		$('body').css('background-color', '#1875ad');
 	},
 

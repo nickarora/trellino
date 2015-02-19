@@ -1,0 +1,41 @@
+/* New Session and New Sign Up Pages */
+
+body {
+	background-image: url(/assets/bg.jpeg);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.manual-login {
+	display: none;
+}
+
+.log-in {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+
+	margin-left: -150px;
+	margin-top: -180px;
+	width: 300px;
+	padding: 20px;
+	border-radius: 20px;
+	background-color: #fff;
+}
+
+.log-in button {
+	margin-bottom: 5px;
+}
+
+.logo {
+	position: absolute;
+	width: 260px;
+	margin-top: -60px;
+	text-align: center;
+	color: #FFF;
+	font-size: 30px;
+	font-weight: 400;
+	font-family: 'Inconsolata';
+}
