@@ -15,9 +15,13 @@
 }
 
 .btn-primary {
-	background-color: #4385a9;
+	background-color: #4085ac;
 	border: none;
 	margin-left: 3px;
+}
+
+.btn-primary:hover {
+	background-color: #679dbd;
 }
 
 /* Board Index Page */
@@ -179,6 +183,22 @@ h4 {
 
 .card:hover {
 	background-color: #edeff0;
+}
+
+.card-placeholder {
+	background-color: #a2a2a2;
+	opacity: 0.5;
+	border-radius: 6px;
+	margin-bottom: 10px;
+}
+
+.ui-sortable-helper {
+  -ms-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  -webkit-transform: rotate(4deg);
+  transform: rotate(4deg);
+  z-index: 1000;
+  position: relative;
 }
 
 .card:hover > .glyphicon {

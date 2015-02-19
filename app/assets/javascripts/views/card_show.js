@@ -151,7 +151,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 			$progressBar.css('background-color', '#cb2026');	
 		}
 
-		$progressBar.animate({'width': percent + '%'}, 250);
+		$progressBar.animate({'width': percent + '%'}, 25);
 	},
 
 	render: function(){

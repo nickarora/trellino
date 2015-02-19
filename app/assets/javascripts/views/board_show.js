@@ -97,6 +97,8 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
 	makeCardsSortable: function(){
 		this.$('div.cards').sortable({
 			connectWith: $('.cards'),
+			placeholder: "card-placeholder",
+			forcePlaceholderSize: true,
 			stop: function(event, ui){
 				ui.item.trigger('drop', ui.item.index());
 			}
