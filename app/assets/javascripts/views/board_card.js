@@ -1,11 +1,14 @@
 TrelloClone.Views.Card = Backbone.CompositeView.extend({
 	template: JST['card'],
+	className: 'card',
 
 	events: {
 		"click .glyphicon": 'showModal',
 		'hideModal': 'hideModal',
+		"hideCardShow": "hideCardShow",
 		"drop": "drop",
-		"move": "moveCard"
+		"move": "moveCard",
+		"click": "showCard"
 
 	},
 
@@ -19,10 +22,15 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		var params = $(event.target.parentElement.parentElement).serializeJSON();
 		var updatedCard = this.model.set(params["edit"]);
 
-		updatedCard.save({}, {
-			success: function(){
-			}
+		updatedCard.save({});
+	},
+
+	showCard: function(event){
+		var cardView = new TrelloClone.Views.CardShow({
+			sourceCard: this,
+			model: this.model
 		});
+		$('body').prepend(cardView.render().$el)
 	},
 
 	deleteCard: function() {
@@ -31,6 +39,7 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 	},
 
 	showModal: function(event){
+		event.stopPropagation();
 		var modalForm = new TrelloClone.Views.EditDeleteForm({
 			sourceCard: this,
 			model: this.model
@@ -42,11 +51,13 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		$('.edit-delete-modal').remove();
 	},
 
+	hideCardShow: function(event){
+		$('.card-show').remove();
+	},
+
 	render: function(){
 		var content = this.template({ card: this.model });
 		this.$el.html(content);
-		this.$el.addClass('card');
-
 		this.attachSubviews();
 		return this;
 	},

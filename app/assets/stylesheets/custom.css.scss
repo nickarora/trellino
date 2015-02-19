@@ -252,3 +252,82 @@ h4 {
 	margin: 0 -12px 0 0 !important;
 }
 
+/* Card Show View */
+
+.card-modal {
+	position: fixed;
+
+	left: 50%;
+	top: 50%;
+
+	width: 400px;
+	height: 400px;
+	margin-left: -200px;
+	margin-top: -200px;
+
+	background-color: #edeff0;
+	color: #4d4d4d;
+	text-decoration: none;
+
+	border-radius: 6px;
+	padding: 10px 10px 10px 10px;
+	z-index: 101;
+	word-wrap: break-word;
+}
+
+.cancel-card-show {
+	position: absolute;
+	color: #8c8c8c;
+	right: 10px;
+	top: 4px;
+	font-size: 28px;
+}
+
+.cancel-card-show:hover {
+	color: #cb2026;
+}
+
+.title-card-show {
+	font-size: 20px;
+	text-transform: capitalize;
+}
+
+.description-card-show {
+	color: #8c8c8c;
+}
+
+.description-card-show i {
+	font-size: 14px;
+}
+
+.edit-description-link {
+	text-decoration: underline;
+}
+
+.checklist-header {
+	margin-top: 10px;
+	font-size: 20px;
+}
+
+.square {
+	width: 20px;
+	height: 20px;
+	border-radius: 2px;
+	box-shadow: 0 2px #cccccc;
+	background-color: #fff;	
+}
+
+.square i {
+	position: absolute;
+	font-size: 20px;
+}
+
+.strikethrough {
+	text-decoration: line-through !important;
+	color: #8c8c8c !important;
+}
+
+.item {
+	margin-top: 5px;
+}
+
