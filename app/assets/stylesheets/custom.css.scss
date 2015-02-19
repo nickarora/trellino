@@ -302,6 +302,7 @@ h4 {
 
 .edit-description-link {
 	text-decoration: underline;
+	cursor: pointer;
 }
 
 .checklist-header {
@@ -317,6 +318,11 @@ h4 {
 	background-color: #fff;	
 }
 
+.square:hover {
+	background-color: #87D37C;
+	cursor: pointer;
+}
+
 .square i {
 	position: absolute;
 	font-size: 20px;
@@ -329,5 +335,11 @@ h4 {
 
 .item {
 	margin-top: 5px;
+}
+
+.delete-item {
+	margin: 0 0 0 5px;
+	padding: 0 2px 0 2px;
+	font-size: 9px;
 }
 

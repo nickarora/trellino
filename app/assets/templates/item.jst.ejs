@@ -1,10 +1,12 @@
 <div class='row'>
-<div class='col-xs-1'>
-	<div class='square'>
-		<% if (item.get('done')) { %>
-			<i class="fa fa-check"></i>
-		<% } %>
+	<div class='col-xs-1'>
+		<div class='square'>
+			<% if (item.get('done')) { %>
+				<i class="fa fa-check"></i>
+			<% } %>
+		</div>
 	</div>
-</div>
-<div class='col-xs-10 item-title'><%= item.escape('title') %></div>
+	<div class='col-xs-10 item-title
+	<% if (item.get('done')) { %> strikethrough <% } %>'>
+		<%= item.escape('title') %><button class='btn btn-danger delete-item'>x</button></div>
 </div>

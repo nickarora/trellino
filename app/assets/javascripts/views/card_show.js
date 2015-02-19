@@ -5,6 +5,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 	
 	initialize: function(options){
 		$('body').on('click', '.block-page', this.hideCardShow.bind(this));
+		this.listenTo(this.model.items(), 'remove', this.removeItemView.bind(this));
 		this.card = options.sourceCard
 
 		var editLinkView = new TrelloClone.Views.EditDescriptionLink({
@@ -20,7 +21,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 	events: {
 		"click .edit-description-form .submit": "updateDescription",
 		'click .cancel-card-show': 'hideCardShow',
-		'click .edit-description': 'showEditForm',
+		'click .edit-description-link': 'showEditForm',
 		'click .edit-description .cancel': 'hideEditForm'
 	},
 
@@ -29,6 +30,14 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 			model: item
 		});
 		this.addSubview('.item-list', itemView);
+	},
+
+	removeItemView: function(item) {
+		var itemToRemove = item.id;
+    var itemSubviews = this.subviews()['.item-list'];
+    var subviewToRemove = _.filter(itemSubviews, function(view) { return view.model.id == itemToRemove; } )[0];
+    itemSubviews.splice(itemSubviews.indexOf(subviewToRemove), 1);
+    this.render();
 	},
 
 	hideCardShow: function(event){

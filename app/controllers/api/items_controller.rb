@@ -11,6 +11,16 @@ module Api
       end
     end
 
+    def update
+      @item = Item.find(params[:id])
+      if @item.update_attributes(item_params)
+        render json: @item
+      else
+        render json: @item.errors.full_messages,
+               status: :unprocessable_entity
+      end
+    end
+
     def destroy
       @item = Item.find(params[:id])
       @item.destroy();
@@ -37,7 +47,7 @@ module Api
     end
 
     def item_params
-      params.require(:item).permit(:title, :card_id )
+      params.require(:item).permit(:title, :card_id, :done)
     end
   end
 end
