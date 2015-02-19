@@ -30,6 +30,7 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 			sourceCard: this,
 			model: this.model
 		});
+		$('body').css('overflow', 'hidden');
 		$('body').prepend(cardView.render().$el)
 	},
 
@@ -52,6 +53,7 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 	},
 
 	hideCardShow: function(event){
+		$('body').css('overflow', 'auto');
 		$('.card-show').remove();
 	},
 

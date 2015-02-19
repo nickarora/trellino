@@ -273,6 +273,9 @@ h4 {
 	padding: 10px 10px 10px 10px;
 	z-index: 101;
 	word-wrap: break-word;
+
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .cancel-card-show {
@@ -350,4 +353,14 @@ h4 {
 .new-item-link {
 	text-decoration: underline;
 	cursor: pointer;
+	color: #8c8c8c;
+}
+
+.progress {
+	margin-bottom: 2px;
+	box-shadow: 0 2px #cccccc;
+}
+
+.progress-bar {
+	background-color: #cb2026;
 }

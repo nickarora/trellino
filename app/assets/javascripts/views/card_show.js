@@ -7,7 +7,8 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 		$('body').on('click', '.block-page', this.hideCardShow.bind(this));
 		this.listenTo(this.model.items(), 'remove', this.removeItemView.bind(this));
 		this.listenTo(this.model.items(), 'add', this.addItemView.bind(this));
-		this.card = options.sourceCard
+		this.listenTo(this.model.items(), 'change', this.render);
+		this.card = options.sourceCard;
 
 		var editLinkView = new TrelloClone.Views.EditDescriptionLink({
 			model: this.model
@@ -55,6 +56,7 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 			model: item
 		});
 		this.addSubview('.item-list', itemView);
+		this.render();
 	},
 
 	removeItemView: function(item) {
@@ -126,12 +128,39 @@ TrelloClone.Views.CardShow = Backbone.CompositeView.extend({
 		this.hideEditForm();
 	},
 
+	updateProgressBar: function(){
+
+		var totalItems = this.model.items().length;
+		if (this.model.items().length > 0){
+			var numCompleted = 0;
+			this.model.items().each(function(item){
+				if (item.get('done')){
+					numCompleted++;
+				}
+			});
+			var percent = Math.floor(numCompleted/totalItems * 100);
+		} else {
+			var percent = 0;
+		}
+
+		var $progressBar = this.$('.progress-bar');
+
+		if (percent == 100) {
+			$progressBar.css('background-color', '#87D37C');	
+		} else {
+			$progressBar.css('background-color', '#cb2026');	
+		}
+
+		$progressBar.animate({'width': percent + '%'}, 250);
+	},
+
 	render: function(){
 		var content = this.template({
 			card: this.model
 		});
 		this.$el.html(content);
 		this.attachSubviews();
+		this.updateProgressBar();
 		return this;
 	}
 
