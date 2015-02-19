@@ -13,6 +13,7 @@ gem 'sass-rails', '~> 4.0.0'
 gem 'pg'
 gem 'uglifier', '>= 1.3.0'
 gem 'seed_dump'
+gem 'rails_12factor', group: :production
 
 group :doc do
   gem 'sdoc', require: false
@@ -24,4 +25,6 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry-rails'
 end
+
+ruby "2.1.2"
 
