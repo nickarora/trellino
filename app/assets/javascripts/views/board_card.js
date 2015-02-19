@@ -73,7 +73,12 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
       description: this.model.get('description')
     });
 
-    newCard.items() = this.model.items();
+    this.model.items().each(function(item){
+    	var newItem = new TrelloClone.Models.Item();
+    	newItem.set('title', item.get('title'));
+    	newItem.set('done', item.get('done'));
+    	newCard.items().add(newItem);
+    });
 
 		this.model.destroy();
     this.model = newCard;
@@ -90,6 +95,11 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		} else {
 			this.model.save({},{
 				success: function(){
+					that.model.items().each(function(item){ 
+						item.set('card_id', that.model.id); 
+						item.save({});
+					});
+
 					$card = $(event.currentTarget)
 					$list = $card.parent().parent();
 					$list.trigger('update-sort', [that.model, index]);		
