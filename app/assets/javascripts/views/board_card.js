@@ -9,7 +9,6 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
 		"drop": "drop",
 		"move": "moveCard",
 		"click": "showCard"
-
 	},
 
 	initialize: function() {
@@ -73,6 +72,8 @@ TrelloClone.Views.Card = Backbone.CompositeView.extend({
       ord: futureList.cards().length,
       description: this.model.get('description')
     });
+
+    newCard.items() = this.model.items();
 
 		this.model.destroy();
     this.model = newCard;
