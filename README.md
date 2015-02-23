@@ -1,5 +1,8 @@
 # Trellino
 
+![preview]
+[preview]:	./docs/preview.png
+
 [Demo][sitelink]
 
 [sitelink]: http://www.trellino.co/
