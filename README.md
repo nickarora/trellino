@@ -1,11 +1,11 @@
 # Trellino
 
-![preview]
-[preview]:	./docs/preview.png
-
-[Demo][sitelink]
+[Live Demo][sitelink]
 
 [sitelink]: http://www.trellino.co/
+
+![preview]
+[preview]:	./docs/preview.png
 
 ## Description
 Trellino is a clone of popular web-based project management software, Trello. 
