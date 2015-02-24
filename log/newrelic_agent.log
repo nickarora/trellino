@@ -1,0 +1,64 @@
+# Logfile created on 2015-02-23 19:18:42 -0800 by logger.rb/44203
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Starting the New Relic agent in "development" environment.
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] WARN : No configuration file found. Working directory = /Users/Nick/Code/app_academy/final_projects/Trellino
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] WARN : Looked in these locations (based on defaults): /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/.newrelic/newrelic.yml, /Users/Nick/newrelic.yml
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Environment: development
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Dispatcher: webrick
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Application: development
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing ActiveRecord 4 instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing Net instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing deferred Rack instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing Rack::Builder middleware instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing Rails 3+ middleware instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing Rails 4 Controller instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing Rails 4 view instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Installing Rails 4 Error instrumentation
+[02/23/15 19:18:42 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Finished instrumentation
+[02/23/15 19:18:43 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Doing deferred dependency-detection before Rack startup
+[02/23/15 19:19:31 -0800 Nicks-MacBook-Pro.local (1139)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/23/15 19:19:31 -0800 Nicks-MacBook-Pro.local (1139)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/23/15 19:21:01 -0800 Nicks-MacBook-Pro.local (1139)] INFO : Starting Agent shutdown
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Starting the New Relic agent in "development" environment.
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] WARN : No configuration file found. Working directory = /Users/Nick/Code/app_academy/final_projects/Trellino
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] WARN : Looked in these locations (based on defaults): /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/.newrelic/newrelic.yml, /Users/Nick/newrelic.yml
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Environment: development
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Dispatcher: webrick
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Application: development
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing ActiveRecord 4 instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing Net instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing deferred Rack instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing Rack::Builder middleware instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing Rails 3+ middleware instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing Rails 4 Controller instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing Rails 4 view instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Installing Rails 4 Error instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Finished instrumentation
+[02/23/15 19:21:07 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Doing deferred dependency-detection before Rack startup
+[02/23/15 19:21:12 -0800 Nicks-MacBook-Pro.local (1261)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/23/15 19:21:12 -0800 Nicks-MacBook-Pro.local (1261)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/23/15 19:36:02 -0800 Nicks-MacBook-Pro.local (1261)] INFO : Starting Agent shutdown
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Starting the New Relic agent in "development" environment.
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] WARN : No configuration file found. Working directory = /Users/Nick/Code/app_academy/final_projects/Trellino
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] WARN : Looked in these locations (based on defaults): /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/.newrelic/newrelic.yml, /Users/Nick/newrelic.yml
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Environment: development
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Dispatcher: webrick
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Application: development
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing ActiveRecord 4 instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing Net instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing deferred Rack instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing Rack::Builder middleware instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing Rails 3+ middleware instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing Rails 4 Controller instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing Rails 4 view instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Installing Rails 4 Error instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Finished instrumentation
+[02/23/15 19:36:08 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Doing deferred dependency-detection before Rack startup
+[02/23/15 19:36:15 -0800 Nicks-MacBook-Pro.local (1473)] ERROR : Invalid license key, please contact support@newrelic.com
+[02/23/15 19:36:15 -0800 Nicks-MacBook-Pro.local (1473)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/23/15 21:07:41 -0800 Nicks-MacBook-Pro.local (1473)] INFO : Starting Agent shutdown

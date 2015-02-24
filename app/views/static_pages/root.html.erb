@@ -2,6 +2,11 @@
 <div class="backdrop">
   <div id="main"></div>
 </div>
-<script>$(TrelloClone.initialize);</script>
+<script>
+	TrelloClone.CURRENT_USER = { 
+		email: '<%= current_user.try(:email)  %>'
+	};
+	$(TrelloClone.initialize);
+</script>
 
 

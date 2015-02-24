@@ -6,6 +6,9 @@ class SessionsController < ApplicationController
 
     if @user
       sign_in!(@user)
+      if current_user.email == 'guest@guest.com'
+        Board.reseed
+      end
       redirect_to root_url
     else
       flash.now[:errors] = ["Invalid email and/or password"]
