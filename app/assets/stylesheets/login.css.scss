@@ -1,6 +1,8 @@
 /* New Session and New Sign Up Pages */
 
 body {
+	width: 100vw;
+	height: 100vh;
 	background-image: url(image-path('bg.jpeg'));
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -16,25 +18,28 @@ body {
 	position: fixed;
 	left: 50%;
 	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 
-	margin-left: -150px;
-	margin-top: -180px;
-	width: 300px;
-	padding: 20px;
-	border-radius: 20px;
+	width: 40vw;
+	padding: 2vw;
+	border-radius: 2vw;
 	background-color: #fff;
+	font-size: 3vh;
 }
 
 .log-in button {
-	margin-bottom: 5px;
+	margin-bottom: 1vh;
 }
 
 .logo {
 	position: absolute;
-	width: 260px;
-	margin-top: -60px;
+	left: 50%;
+	top: 0;
+	-webkit-transform: translate(-50%, -200%);
+	transform: translate(-50%, -100%);
 	text-align: center;
 	color: #FFF;
-	font-size: 30px;
+	font-size: 5vh;
 	font-family: 'Pacifico';
 }

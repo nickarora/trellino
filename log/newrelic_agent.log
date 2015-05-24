@@ -117,3 +117,67 @@
 [02/23/15 21:12:16 -0800 Nicks-MacBook-Pro.local (2897)] INFO : Doing deferred dependency-detection before Rack startup
 [02/23/15 21:13:21 -0800 Nicks-MacBook-Pro.local (2897)] ERROR : Invalid license key, please contact support@newrelic.com
 [02/23/15 21:13:21 -0800 Nicks-MacBook-Pro.local (2897)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[02/23/15 21:29:50 -0800 Nicks-MacBook-Pro.local (2897)] INFO : Starting Agent shutdown
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Starting the New Relic agent in "development" environment.
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] WARN : No configuration file found. Working directory = /Users/Nick/Code/app_academy/final_projects/Trellino
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] WARN : Looked in these locations (based on defaults): /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/.newrelic/newrelic.yml, /Users/Nick/newrelic.yml
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Environment: development
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Dispatcher: webrick
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Application: development
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing ActiveRecord 4 instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing Net instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing deferred Rack instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing Rack::Builder middleware instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing Rails 3+ middleware instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing Rails 4 Controller instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing Rails 4 view instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Installing Rails 4 Error instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Finished instrumentation
+[05/24/15 09:47:01 -0700 Nicks-MBP (54704)] INFO : Doing deferred dependency-detection before Rack startup
+[05/24/15 09:47:05 -0700 Nicks-MBP (54704)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/24/15 09:47:05 -0700 Nicks-MBP (54704)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/24/15 09:47:40 -0700 Nicks-MBP (54704)] INFO : Starting Agent shutdown
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] INFO : Starting the New Relic agent in "development" environment.
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] WARN : No configuration file found. Working directory = /Users/Nick/Code/app_academy/final_projects/Trellino
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] WARN : Looked in these locations (based on defaults): /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/.newrelic/newrelic.yml, /Users/Nick/newrelic.yml
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] INFO : Environment: development
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] INFO : Dispatcher: webrick
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] INFO : Application: development
+[05/24/15 09:48:04 -0700 Nicks-MBP (54726)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing ActiveRecord 4 instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing Net instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing deferred Rack instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing Rack::Builder middleware instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing Rails 3+ middleware instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing Rails 4 Controller instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing Rails 4 view instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Installing Rails 4 Error instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Finished instrumentation
+[05/24/15 09:48:05 -0700 Nicks-MBP (54726)] INFO : Doing deferred dependency-detection before Rack startup
+[05/24/15 09:48:12 -0700 Nicks-MBP (54726)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/24/15 09:48:12 -0700 Nicks-MBP (54726)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/24/15 09:48:25 -0700 Nicks-MBP (54726)] INFO : Starting Agent shutdown
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Starting the New Relic agent in "development" environment.
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : To prevent agent startup add a NEWRELIC_AGENT_ENABLED=false environment variable or modify the "development" section of your newrelic.yml.
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] WARN : No configuration file found. Working directory = /Users/Nick/Code/app_academy/final_projects/Trellino
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] WARN : Looked in these locations (based on defaults): /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/config/newrelic.yml, /Users/Nick/Code/app_academy/final_projects/Trellino/newrelic.yml, /Users/Nick/.newrelic/newrelic.yml, /Users/Nick/newrelic.yml
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Environment: development
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Dispatcher: webrick
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Application: development
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] WARN : No license key found. This often means your newrelic.yml file was not found, or it lacks a section for the running environment, 'development'.
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing ActiveRecord 4 instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing Net instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing deferred Rack instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing Rack::Builder middleware instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing Rails 3+ middleware instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing Rails 4 Controller instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing Rails 4 view instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Installing Rails 4 Error instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Finished instrumentation
+[05/24/15 09:49:25 -0700 Nicks-MBP (54767)] INFO : Doing deferred dependency-detection before Rack startup
+[05/24/15 09:49:27 -0700 Nicks-MBP (54767)] ERROR : Invalid license key, please contact support@newrelic.com
+[05/24/15 09:49:27 -0700 Nicks-MBP (54767)] ERROR : Visit NewRelic.com to obtain a valid license key, or to upgrade your account.
+[05/24/15 10:04:22 -0700 Nicks-MBP (54767)] INFO : Starting Agent shutdown
